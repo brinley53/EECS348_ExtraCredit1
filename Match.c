@@ -68,8 +68,8 @@ int main() {
 	for (int i = 0; i < 4; i++) {
 		for (int j = 0; j < 5; j++) {
 			//iterate through the department assignments and compare them to each other to see if they have the same one
-			if (D_P[i] == D_P[j] && i != j) {
-				for (int k = 0; k < 5; k++) {
+			if (D_P[i] == D_P[j] && i != j) { //if the two departments have the same preference and the iteration isn't looking at the same department
+				for (int k = 0; k < 5; k++) { //iterate through the programmers' choices
 					if (P[D_P[i]-1][k] == i+1) { //if the programmer has the preference of the i department first
 						//a switch to see which department we're dealing with; make the j department have its next choice
 						switch (j) {
@@ -95,6 +95,7 @@ int main() {
 						switch (i) {
 							case 0:
 								D_P[i] = D1[++choiceD1];
+								break;
 							case 1:
 								D_P[i] = D2[++choiceD2];
 								break;
